@@ -6,13 +6,19 @@ abstract class ORM implements ORMInterface {
     protected static $primaryKey = 'id';
     protected $attributes = [];
 
-    public function __construct($attributes = []) {
+    public function __construct($attributes = []) { 
         $this->attributes = $attributes;
     }
 
     public static function setupTable() {
         $pdo = Database::getConnection();
-        $sql = static::getCreateTableSQL();
+        $sql = "CREATE TABLE IF NOT EXISTS " .static::$table . " (
+            " . static::$primaryKey. " INT AUTO_INCREMENT PRIMARY KEY,
+            username VARCHAR(255) NOT NULL,
+            email VARCHAR(255) NOT NULL,
+            password VARCHAR(255) NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )";
         return $pdo->exec($sql) !== false;
     }
 
@@ -93,6 +99,6 @@ abstract class ORM implements ORMInterface {
         return $pdo->exec($sql) !== false;
     }
 
-    abstract protected static function getCreateTableSQL();
+    // abstract protected static function getCreateTableSQL();
 }
 ?>

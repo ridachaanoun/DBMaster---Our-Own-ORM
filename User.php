@@ -30,14 +30,5 @@ class User extends ORM {
         $this->attributes['password'] = $password;
     }
 
-    protected static function getCreateTableSQL() {
-        return "CREATE TABLE IF NOT EXISTS " . self::$table . " (
-            " . self::$primaryKey . " INT AUTO_INCREMENT PRIMARY KEY,
-            username VARCHAR(255) NOT NULL,
-            email VARCHAR(255) NOT NULL,
-            password VARCHAR(255) NOT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )";
-    }
 }
 ?>
