@@ -6,9 +6,16 @@ require 'ORM.php';
 require 'ORMInterface.php';
 require 'User.php';
 
-// Create the User table
+$columns = [
+    'username VARCHAR(255) NOT NULL',
+    ' email VARCHAR(255) NOT NULL',
+    'password VARCHAR(255) NOT NULL',
+    'created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP'
+];
+
+// Create the  table
 echo "Creating User table...<br>";
-if (User::setupTable()) {
+if (User::setupTable("users",$columns)) {
     echo "User table created successfully.<br>";
 } else {
     echo "Failed to create User table.<br>";

@@ -6,9 +6,10 @@ require '../ORM.php';
 require '../ORMInterface.php';
 require '../User.php';
 
+
 // Drop the column
 echo "Dropping column 'age' from User table...<br>";
-if (User::dropColumn('age')) {
+if (User::dropColumn('rida', 'age')) {
     echo "Column 'age' dropped successfully.<br>";
 } else {
     echo "Failed to drop column 'age'.<br>";

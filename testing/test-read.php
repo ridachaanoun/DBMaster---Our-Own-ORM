@@ -8,7 +8,7 @@ require '../User.php';
 
 // Read the user
 echo "Reading user ...<br>";
-$user = User::find(27);
+$user = User::find(1);
 if ($user) {
     echo "User found: " . $user->getUsername() . " - " . $user->getEmail() . "<br>";
 } else {

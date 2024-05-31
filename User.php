@@ -3,8 +3,9 @@
 require_once 'ORM.php';
 
 class User extends ORM {
-    protected static $table = 'users';
+    protected static $table = 'Users';
     protected static $primaryKey = 'id';
+    
 
     public function getUsername() {
         return $this->attributes['username'];
@@ -27,7 +28,10 @@ class User extends ORM {
     }
 
     public function setPassword($password) {
-        $this->attributes['password'] = $password;
+        $this->attributes['password'] = sha1($password) ;
+    }
+    public static function addUserColumn($name, $type) {
+        static::$columns[$name] = $type;
     }
 
 }

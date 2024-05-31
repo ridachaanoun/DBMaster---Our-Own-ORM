@@ -8,11 +8,13 @@ require '../User.php';
 
 // Update the user
 echo "Updating user ...<br>";
-$user = User::find(22);
+$user = User::find(2);
+// print_r($user);
 if ($user) {
-    $user->setUsername('updated-reda');
+    $user->setName('updated-reda');
     $user->setEmail('updated@gmail.com');
-    $user->setPassword('newpassword123');
+    $user->setPassword('123');
+    $user->setPassword('23');
     if ($user->save()) {
         echo "User updated successfully.<br>";
     } else {

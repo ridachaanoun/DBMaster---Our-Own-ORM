@@ -8,7 +8,7 @@ require '../User.php';
 
 // Delete the user
 echo "Deleting user ...<br>";
-$user = User::find(17);
+$user = User::find(1);
 if ($user) {
     if ($user->delete()) {
         echo "User deleted successfully.<br>";
