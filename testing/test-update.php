@@ -11,7 +11,7 @@ echo "Updating user ...<br>";
 $user = User::find(2);
 // print_r($user);
 if ($user) {
-    $user->setName('updated-reda');
+    $user->setUsername('updated-reda');
     $user->setEmail('updated@gmail.com');
     $user->setPassword('123');
     $user->setPassword('23');

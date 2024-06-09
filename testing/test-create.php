@@ -7,7 +7,6 @@ require '../ORMInterface.php';
 require '../User.php';
 
 
-
 // Add columns to the User table
 User::addUserColumn('username', 'VARCHAR(255) NOT NULL');
 User::addUserColumn('email', 'VARCHAR(255) NOT NULL');
@@ -23,14 +22,4 @@ if (User::setupTable("chaano")) {
     echo "Failed to create User table.<br>";
 }
 
-
-
-// // Create the test table
-// $table->addUserColumn("age"," VARCHAR(255) NOT NULL" );
-// echo "Creating User table...<br>";
-// if ($table->setupTable("test")) {
-//     echo "test table created successfully.<br>";
-// } else {
-//     echo "Failed to create test table.<br>";
-// }
 ?>
