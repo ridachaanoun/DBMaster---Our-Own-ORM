@@ -5,8 +5,6 @@ require_once 'ORM.php';
 class Product extends ORM {
     protected static $table = 'products';
     protected static $primaryKey = 'id';
-    protected static $price = 'price';
-    protected static $name = 'name';
 
     public function getName() {
         return $this->attributes['name'];
